@@ -4,7 +4,7 @@ Este repositorio está indicado para los desarrolladores de diferentes niveles q
 
 Este guía no cubre todo sobre el Clean Code para Unity, pero si las partes más imporantes y de manera consisa. Si quieres aprender más te sugerimos leer [C# programming guide](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/) en cuanto a dudas específicas sobre las características de C# el libro "*Clean Code: A Handbook of Agile Software Craftsmanship*" de Robert C. Martin te dará una visión mayor sobre Clean Code.
 
-One of the most covered topics in this guide is naming conventions for C#. Keep in mind, however, that naming conventions are often tweaked **on purpose** by organizations for various reasons (Unity and Microsoft included). If you have a good reason to not follow them, do it! Just remember that if a project is using a different style convention, use it on the entire project.
+En esta guía trataremos sobre todo conveciones para el lenguaje C#. Recuerda, que de todos modos, estas convencions con mucha frecuencia son moidifcadas **al gusto** de las organizaciones/empresas por diversos motivos (Unity y Microsoft incluidas). Si tienes una buena razón para no hacer uso de ellas, se libre! Pero recuerda que si usas una convención diferente debe hacerse en todo el proyecto.
 
 - [The Basics](#the-basics)
 - [Identation](#identation)
