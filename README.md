@@ -77,7 +77,7 @@ En la parte superiora (justo tras public class MyCustomScript), definimos que cl
 Un error común entre los que se inician, es pensar que todo debe ser un MonoBehaviour o heredar de otra clase. Esto está muy lejos de la realidad, y se trata de una mala prácticas. Por ejemplo, si tienes un código que solo manipula datos, podrías considerarlo como una clase que no herede de MonoBehaviour.
 ## Identation
 
-At first glance, identation is a simple topic: managing *spaces* inside your code. It is what makes your code more readable by separating different words or symbols with a space, tab, or new line. Understanding the importance of a code with the correct identation is often hard to developers who are new to programming, and the best way I ever found to change that was to show a piece of code with really bad identations. Let's take our script template to a new level (of uglyness):
+A primera vista, la identación es un aspecto simple: poner *espacios* dentro de tu código. Lo que hará que sea más legible al separar palabras o símbolos con un espacio, tabulador o una nueva linea. Entender la importancia de la identación es en ocasiones dificil para los que son nuevos en la programación, y la mejor forma que he encontrado de explicarlo es cambiar un código y ponerle muy mala identación. Vamos a llevar la plantilla de Unity a un nuevo nivel (de fealdad):
 
 ```csharp
 // The code below is an example of *bad* identation.
@@ -93,19 +93,21 @@ void Start() {
 }
 ```
 
-How hard it is for you to read the code above? If you're used to programming in Unity maybe not very much, but it is already more time-consuming to understand what this script does and where each part of the could should be. If we took our approach to a real script, with 50 or 100 lines or code, readability would be absolutely awful.
+¿Es difícil leer el código de arriba? Si estás acostumbrado a programar en Unity tal vez no mucho, pero lleva más tiempo entender que hace este script y donde está cada parte. Si llevamos este ejemplo a un script real, con 50 o 100 líneas de código,la legibilidad sería terrible.
 
-Many programming languages (C# included) have suggested guidelines or rules on how to properly ident your code, but truly learning it is not an easy task for most people. Luckily for us, there is a tool that will makes this process much easier: auto-formatting. If you're not sure you can handle identation by yourself, let the computer do the job for you and learn it by example. As you're probably using Visual Studio to code, my suggestion is to install the '*Productivity Power Tools*' plugin for Visual Studio and have the "Format document on save" option enabled. If you don't want to (or can't) install it, you can always use the "*Ctrl+K, Ctrl+D*" shortcut to format the currently opened script.
+Muchos lenguajes de programación (incluido C#) han sugerido líneas o regalas sobre como identar correctamente tu código, pero aprender esto no es taría fácil para todo el mundo. Por suerte para nosotros, existe una herramienta que hará este proceso mucho más fácil: el auto-formato. Si no estás seguro que puedes llevara cabo la identación tuy mismo, deja que el ordeandor haga el trabajo por ti. Si estás utilizando Visual Studio para programar, puedes instalar el plugin '*Productivity Power Tools* y tener la opción "Format document on save" activada. Sino quieres o no puedes hacer esto, siempre puedes utilizar el atajo "*Ctrl+K, Ctrl+D*" para formatear tu script correctametne.
+
 
 ## Variables
 
-As you probably know, variables (or members, technically speaking) are what stores the data of your application during runtime. Because your game probably has lots of data, having meaningful and readable names for them is vital. We will also talk about serialization of variables here, a topic of special importance in Unity.
+Como probablemente sepas, las variables (o miembros, hablando técnicamente) son donde se almacena los datos de tu aplicación durante la ejecución. Porque tu juego probablemente tenga un monton de datos, tener nombres con significado propio y fácilmente legibles es algo vital. También hablaremos de la serialización de variables aquí, un punto realmente importante en Unity,
 
 ### Naming
 
-This is a tricky topic within the community. While certain languages have very strict naming conventions, C# is a little bit "relaxed" within a few cases, leaving the convention open for the organization to decide. With this in mind, what you will see below is a mix of what is the C# guidelines for naming variables (including fields and properties) and what is very common and/or widely adopted.
+Este es un aspecto difícil entre la comunidad. Mientras que ciertos lenguajes tienen una convención muy estricta en cuantos los nombres de variables, C# es algo más "relajado", dejando de lado que la conveción estará en manos de la emprsa. Con esto en mente, vamos a ver ejemplos de como llamar variables y que es común.
 
-- Use meaningful names
+
+- Usar nombres con significado propio
 ```csharp
 // Do
 public int healthAmount;
@@ -115,7 +117,7 @@ public int hp;
 public string tName;
 ```
 
-- Use readable names
+- Usa nombres legibles
 ```csharp
 // Do
 public int movementSpeed;
@@ -123,7 +125,7 @@ public int movementSpeed;
 public int mvmtSpeed;
 ```
 
-- Use nouns as names for variables
+- Usa sustantivos como nombres para las variables
 ```csharp
 // Do
 public int movementSpeed;
@@ -131,15 +133,15 @@ public int movementSpeed;
 public int getMovementSpeed;
 ```
 
-- Use the correct "casing" for the kind of variable
+- Usa las mayúsculas de roma correta para el tipo de variable.
 ```csharp
-public int movementSpeed; // Public variable, Camel Case
-private int _movementSpeed; // Private variable, Camel Case with optional '_' at the start
-public int Movement Speed { get; set; } // Property, Pascal Case
-private const int MovementSpeed = 10; // Constant, Pascal Case
+public int movementSpeed; // Variable pública, Camel Case (primera palabra minúscula las siguientes con una mayúscula)
+private int _movementSpeed; //Variable privada, Camel Case con un '_' OPCIONAL al inicio
+public int MovementSpeed { get; set; } // Propiedad, Pascal Case (Cada palabra con una mayuscula)
+private const int MovementSpeed = 10; // Constante, Pascal Case
 ```
 
--  Avoid using abbreviations or single characters (unless it's math-related)
+-  Evita usar abreviaciones o un solo carácter (a no ser que sea algo matemáico)
 ```csharp
 // Do
 public string groupName;
@@ -151,7 +153,7 @@ public int x;
 public int y;
 ```
 
-- Explicitly use the 'private' keyword
+- Explicita el término 'private'
 ```csharp
 // Do
 private bool _isJumping;
@@ -159,7 +161,7 @@ private bool _isJumping;
 bool _isJumping;
 ```
 
-- Use the 'var' keyword when the second part of the variable attribution clearly reveals the type. Only for variables declared inside a method or scope (local variable)
+- Usa la palabra clave 'var' solo cuando en la asignación se pued ver claramente el tipo de dato que almacena. Usar solo en variables locales (declaradas dentro de un método/función/ámbito)
 ```csharp
 // Do
 var players = new List<Players>();
