@@ -1,8 +1,8 @@
 # Unity Clean Code
 
-This repository is dedicated to teach Unity developers of different backgrounds and programming skill levels to create cleaner code, which in most cases is also more maintainable and sometimes even faster! If you have any suggestions or found any errors below, be sure to submit an Issue or a Pull Request.
+Este repositorio está indicado para los desarrolladores de diferentes niveles que utilizan Unity, para que puedan crear código más limpio y en la mayoría de los casos más fácilemtene mantenible y en ocsasiones incluso más rápido. Si tienes alguna sugerencia o has encontrado algún error puedes ponerla como una incidencia o un pull request.
 
-This guide will not cover everything there is to learn about clean code for Unity, but only the most important bits in a concise manner. If you want to learn more, I personally suggest reading the [C# programming guide](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/) when in doubt about a specific C# feature, and/or the book "*Clean Code: A Handbook of Agile Software Craftsmanship*" by Robert C. Martin for a broader understanding of the topic.
+Este guía no cubre todo sobre el Clean Code para Unity, pero si las partes más imporantes y de manera consisa. Si quieres aprender más te sugerimos leer [C# programming guide](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/) en cuanto a dudas específicas sobre las características de C# el libro "*Clean Code: A Handbook of Agile Software Craftsmanship*" de Robert C. Martin te dará una visión mayor sobre Clean Code.
 
 One of the most covered topics in this guide is naming conventions for C#. Keep in mind, however, that naming conventions are often tweaked **on purpose** by organizations for various reasons (Unity and Microsoft included). If you have a good reason to not follow them, do it! Just remember that if a project is using a different style convention, use it on the entire project.
 
@@ -16,6 +16,8 @@ One of the most covered topics in this guide is naming conventions for C#. Keep 
 - [Automated Tests](#automated-tests)
 - [Advanced Tips and Patterns](#advanced-tips-and-patterns)
 - [References](#references)
+
+Esta guía está basada en [Unity Clean Code](https://github.com/sampaiodias/unity-clean-code)
 
 ## The Basics
 If you're reading this guide, you probably have a general understanding of what C# is, how to write (at least) some simple scripts in Unity and what not. However, I often see programmers struggle to truly understand the first principles they ever see when creating a new script. Let's take a look at it:
