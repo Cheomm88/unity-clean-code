@@ -75,6 +75,7 @@ El fichero que hemos creado define una clase (una abstracción de un objeto), qu
 En la parte superiora (justo tras public class MyCustomScript), definimos que clases (si es que hay alguna) vamos a heredar. EN este caso, es la clase MonoBehaviour de Unity. Esta es sin duda la clase más importante en el desarrollo de juegos para Unity ahora mismo, podríamos decir que "marca" esta clase como un componente que podremos adjuntar/asignar a un GameObject. Heredar de otra clase no es solo "marcar", es lo que nos "permite crear nuevas clases que se reutilizan, expanden y modifican el comportamiento que está definido en otras clases". Los métodos Start y Update, por ejemplo, son algo que Unity solo llamará durante sus [eventos predefinidos](https://docs.unity3d.com/Manual/ExecutionOrder.html) si tu clase *es* un MonoBehaviour, en la que ampliaras los métodos que necesitas con las funcionalidades adecuadas. (Por ejemplo: en el Update podrás modificar la posición de un objeto).
 
 Un error común entre los que se inician, es pensar que todo debe ser un MonoBehaviour o heredar de otra clase. Esto está muy lejos de la realidad, y se trata de una mala prácticas. Por ejemplo, si tienes un código que solo manipula datos, podrías considerarlo como una clase que no herede de MonoBehaviour.
+
 ## Identation
 
 A primera vista, la identación es un aspecto simple: poner *espacios* dentro de tu código. Lo que hará que sea más legible al separar palabras o símbolos con un espacio, tabulador o una nueva linea. Entender la importancia de la identación es en ocasiones dificil para los que son nuevos en la programación, y la mejor forma que he encontrado de explicarlo es cambiar un código y ponerle muy mala identación. Vamos a llevar la plantilla de Unity a un nuevo nivel (de fealdad):
@@ -171,7 +172,8 @@ var players = PlayerManager.GetPlayers();
 
 ### Serialization
 
-When you create a C# script using Unity and let the class inherit from MonoBehaviour, values that are "public" to the engine can be edited using the Inspector window. After doing it and saving the scene, these values are **serialized** (or saved) into the scene file.  As the goal of this is not to say when to use or not use serialized variables, let's focus on *how* you can declare a variable to be serialized:
+Cuando tienes un script en C# utilizando Unity y heredas de la clase MonoBehaviour, los valores que son públicos serán accesibles para su edición desde la ventana del Inspector. Tras hacer y guardar la escena, estos valores son **serializados** (o guardardados) en el fichero de la escena. El objetivo de este punto no es decir cuándo o cuándo no utilizar variables serializables, sino en *cómo* declarar una variables para que sea serializada:
+
 
 ```csharp
 // Serialized
@@ -186,7 +188,7 @@ private int _movementSpeed = 10;
 public int MovementSpeed { get; set; }
 ```
 
-As a side note, attributes like the [SerializeField] can also be placed to the line above the declaration to improve readability, like this:
+Como nota, los atributos como [SerializeField] pueden también ponerse por encima de la declaración para mejorar la lectura del código, de la siguiente manera:
 
 ```csharp
 [SerializeField]
@@ -197,7 +199,7 @@ private bool _isEnemy;
 
 ## Methods
 
-If you think about it, methods are the core part of a software: they **do** something. Because of their nature, when you create a method you should always name them using a verb. Don't forget what you learned above about naming variables: use descriptive, meaningful and readable names. Also remember to name methods using Pascal Case.
+Si lo piensas, los métodos/funciones son el núcleo de un programa: ellos **hacen** algo. Por su naturaleza, cuando creas un método/función deberías utilizar un nombre con un verbo. No olvides lo aprendido con los nombres de las variables variables: debe ser descriptivo, con signiificado y fácil de leer. Así como utilizar la nomenclatura "Pascal Case" (Cada palabra con la primera letra en mayúscula)
 
 ```csharp
 // Do
@@ -223,7 +225,7 @@ public void SetInitScr()
 }
 ```
 
-A key feature of methods are parameters. When creating them, use Camel Case and avoid prefixes.
+Una de las características principales de los métodos/funciones, son los parámetros. Al crearlos usa Camel Case y evita los prefijos.
 
 ``` csharp
 // Do
@@ -244,21 +246,23 @@ public bool IsNewHighScore(int _currentScore)
 }
 ```
 
+Mantén la estructura de tus funciones/métodos limpia con una baja cantidad de información en ella. Si tu función contiene más de 10 líneas de código, es prodablmente una buena candidada en ser partida en dos o más funciones. Finalmente, volviendo al tema de la identación, sigue la estructura de la siguiente para tus métodos.
+
 Keep the structure of your methods clear with a low amount of information inside it. If your method contains more than 10 lines of code, it is probably a good candidate to be split into two or more methods. And finally, returning to the identation topic, follow the structure below for methods:
 
 ```csharp
 public void DoSomething()
-{ // Braces on a new line, starting at the same position of the method declaration.
-	// Method content is a 'Tab' to the right after the braces.
+{ // Las llaves en una nueva línea, a la altura de la declaración de la función
+	// El contenido de la función tiene un "Tabulador" a la derecha después de la llave.
 	string somethingCool = "Cool";
 	DoSomethingElse(somethingCool);
 }
+//La llave de cierre del método a la misma altura que la de apertura.
 ```
 
 ## Statements
 
-Statements, as defined by Microsoft, are the "actions that a program takes", like declaring variables, calling methods, and looping through collections. We can divide statements into two categories: single-line, and multi-line. 
-
+Statements (sentencias), son definidas por Microsoft, como "acciones que hace el programa", como declarar variables, llamar a métodos, bucles dentro de collecciones. Podemos definir dos categorías sentencias de una línea o de varias líneas.
 ```csharp
 private void DoSomething()
 {
@@ -273,7 +277,7 @@ private void DoSomething()
 }
 ```
 
-For single-line statements there's not much we can actually talk about aside from keeping every statement in a separate line, having lines of code that are not too long, and other small tips. But there's one exception: line breaks. Use them when having to divide a long statement seems awkward or troublesome.
+Para las sentencias de una sola línea no hay mucho que hablar más allá de mantener cada sentencia en una línea, cuando las líneas no sean muy largas. Aunque existe una excepción: los saltos de línea. Puedes usarlos para dividir sentencias muy largas.
 
 ```csharp
 // Do
@@ -299,7 +303,7 @@ string logMessageForPlayersInformation =
 Debug.Log(logMessageForPlayersInformation);
 ```
 
-The complexity actually steps in when it comes to multi-line statements. When you decide to create blocks of code inside of another block, your script will face a problem similar to the issue presented above. Take a look at this example:
+La complejidad llega cuando trabajamos en sentencias multi-línea. Cuando decides crear bloques de código dentro de otro bloque de código, tu script se encontrará con un problema similar al de arriba. Veamos otro ejemplo:
 
 ```csharp
 var someValue = 100;
