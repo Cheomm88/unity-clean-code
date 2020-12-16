@@ -328,10 +328,10 @@ for (int i = 0; i < 10; i++)
 }
 ```
 
-The code above is not meant to do something useful in particular, but if you were given the task to understand what this algorithm does, that would be a hard job. The amount of complexity added to the code because of these **nested** statements make their readability and maintainablity really low. And trust me, I've seen worse examples of pieces of code that actually shipped to a real game. As a general rule of thumb, keep your methods with a maximum of one multi-line statement nested inside another multi-line statement. When possible, no nesting or even no multi-line statements at all is desirable.
+El código de encima no está diseñado para hacer algo útil en particular, pero si tuvieras la tarea de entender que hace este algoritmo, sería una tarea difícil. La cantidad de complejidad añadida debido a que el código está **anidado** hace que la legibilidad y mantenimiento del código sea realmente malo. Créeme, he visto ejemplos peores que han llegado a salir en juegos reales. Como regla general, manten tus métodos con un máximo de una sentencia multi-línea anidado dentro de otra sentencia multi-línea. Cuando sea posible, evita anidar código o incluso evita las sentencias multi-líneas.
 
 ```csharp
-// Goal
+// Objetivo
 var someValue = 100;
 var myValues = new int[10, 5]
 for (int i = 0; i < 10; i++)
@@ -342,11 +342,11 @@ for (int i = 0; i < 10; i++)
 	}
 }
 
-// Ultimate Goal
+// Objetivo final
 int[,] myValues = CalculateValueMatrix(100, 10, 5);
 ```
 
-There is another curious feature of multi-line statements that can produce some weird-looking code. When a multi-line statement only contains one statement inside its scope, you can remove the braces and the compiler will not throw any errors. There are situations where doing this makes your code much cleaner, but sometimes it is the opposite. Below are some examples of how to approach this, but whatever you do, make this choice consistent across your code.
+Existe otra curiosa característica de las sentencias multi-línea que puede generar tener un código con una apariencia rara. Cuándo una sentencia multi-línea solo tiene una línea dentro, puedes eliminar las llaves y el compilador no dará ningún error. Esto podría ayudar a hacer tu código más limpio, pero en ocasiones hace justo lo contrario. A continuación verás ejemplos de como llevar a cabo esto, hagas lo que hagas, debes mantener una consistencia en tu código. (Yo particularmente prefiero siempre mantener las llaves)
 
 ```csharp
 // Do
@@ -370,9 +370,9 @@ for (int i = 0; i < 10; i++)
 
 ## Namespaces
 
-Maybe one of the most useful features of C#, namespaces are (in short) a way to better organize your scripts. Unfortunately, namespaces were also one the most underused C# features by Unity developers for quite some time (maybe because of Unity's very own scripting documentation not showing it properly), but that's something I'm personally seeing some changes within the community. Namespaces are not only useful, they are powerful, but only when you properly use them. And the most important part about it is... naming them!
+Puede que una de las características más útiles de C#, los namespaces una mejor forma de organizar tus scripts. Desfortunadamente también son una de las características menos usadas de C# por los desarrolladores de Unity. No solo son útiles, son potentes pero solo cuando son usados adecuadamente. Y una parte vital es nombrarlos bien.
 
-Before we go to what you should or shouldn't do with namespaces, take a look at this familiar piece of code:
+Antes de ver que debes o no debes hacer con los namespaces, mira la siguiente parte de código:
 
 ```csharp
 using System.Collections;
@@ -380,9 +380,9 @@ using System.Collections.Generic;
 using UnityEngine;
 ```
 
-Every new MonoBehaviour is *using* theses namespaces: UnityEngine, System.Collections and System.Collections.Generic. The UnityEngine namespace is provided by Unity and contains a lot of scripts, like the MonoBehaviour class. The other ones are provided by Microsoft and and also contain many classes and abstractions that define various collections of objects, such as lists and dictionaries. One important part of namespaces is that you can create namespaces inside another namespace. For example, Collections is actually nested inside of the System namespace.
+Cada nuevo MonoBehaviour está *usando* estos namespaces: UnityEngine, System.Collections y System.Collections.Generic. El UnityEngine namespace es de Unity y contiene muchos scripts, como la clase MonoBehaviour. Los son de Microsoft otros contienen clases y abstracciones de varias colecciones de objetos, como listas y diccionarios. Una parte importante de los namespaces es que puedes crear namespaces dentro de otro namespace. Por ejemplo, Collecions está dentro del namespace System.
 
-Now that these concepts are behind us, let's take a look at how to create them and how to name them!
+Ahora tras estos conceptos, veamos como crear y nombrar un namespace.
 
 ```csharp
 using System;
