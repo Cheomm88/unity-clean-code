@@ -20,7 +20,7 @@ En esta guía trataremos sobre todo conveciones para el lenguaje C#. Recuerda, q
 Esta guía está basada en [Unity Clean Code](https://github.com/sampaiodias/unity-clean-code)
 
 ## The Basics
-If you're reading this guide, you probably have a general understanding of what C# is, how to write (at least) some simple scripts in Unity and what not. However, I often see programmers struggle to truly understand the first principles they ever see when creating a new script. Let's take a look at it:
+Si estás leyendo esta guía, probablemente ya tengas conocimiento general sobre C#, cómo escribir algún script simple y qué cosas no hacer. Sin embargo en ocasiones los programadores se pueden encontrar con problemas para realmente entender los primeros principios que vemos cuando se crea un script. Vamos a verlo: 
 
 ```csharp
 using System.Collections;
@@ -41,7 +41,7 @@ public class MyCustomScript : MonoBehaviour {
 }
 ```
 
-The code above is the basic template of a new C# script in Unity. We can divide it in a few portions.
+El código de aquí arriba es la plantilla de un nuevo script en C# de Unity. Podemos dividirlo en varias secciones.
 
 ```csharp
 using System.Collections;
@@ -49,13 +49,13 @@ using System.Collections.Generic;
 using UnityEngine;
 ```
 
-The first lines of a script are dedicated to "importing" the necessary code libraries to make our code work. Think of it as dependencies: you can't use a feature of the UnityEngine library if you don't explicitly declare you are *using* them. Make sure you leave them at the very first lines of your script.
+En las primeras líneas son las que "importan" las librerías de código necesarias para que nuestro código funcione. Piensa en ellas como dependencias: no puedes usar una característica de la librería UnityEngine (Unity) si no expecificas en una declaración que las estás *usando*. Asegurate de dejarlas siempre en las primeras líneas de código
 
 ```csharp
 public class MyCustomScript 
 ```
 
-The script file we created defines a class (an abstraction of an object), that is public (accessible by other pieces of code), and with the name of the file you typed in. In this case, the class is called *MyCustomScript*. This is a **horrible** name! There is no way we can understand what this class does just by looking at its name (which should be your goal). Use meaninful names, like "PlayerHealth" or "Projectile", **always** in Pascal Case.
+El fichero que hemos creado define una clase (una abstracción de un objeto), que es público "public" (accessible por otros scripts/códigos), y su nombre es el mismo que el del fichero. En este caso, se llama *MyCustomScript*. Este es un nombre **horrible** ! No podemos entender que hace la clase simplemente al leer el nombre (ese es tu objetivo). Siempre usa nombres con significado como "PlayerHealth" (SaludJugador) o "Projectile" (Proyectil), **siempre** usando "Pascal Case", es decir, cada palabra tendrá su primera letra en mayúscula.
 
 ```csharp
                             : MonoBehaviour {
@@ -72,10 +72,9 @@ The script file we created defines a class (an abstraction of an object), that i
 }
 ```
 
-Starting at the top (after public class MyCustomScript), we define what class (if any) our own class inherits from. In this case, it is Unity's MonoBehaviour. This is arguably the most important class in game development for Unity now, as it's what "marks" a class to be a component that can be attached to a GameObject. Inheriting from another class is not just marking it, it is what "enables you to create new classes that reuse, extend, and modify the behaviour that is defined in other classes". The methods Start and Update, for example, is something that Unity will only call during their predefined events if your class *is* a MonoBehaviour, which you will then extend the methods you need with the proper funcionality.
+En la parte superiora (justo tras public class MyCustomScript), definimos que clases (si es que hay alguna) vamos a heredar. EN este caso, es la clase MonoBehaviour de Unity. Esta es sin duda la clase más importante en el desarrollo de juegos para Unity ahora mismo, podríamos decir que "marca" esta clase como un componente que podremos adjuntar/asignar a un GameObject. Heredar de otra clase no es solo "marcar", es lo que nos "permite crear nuevas clases que se reutilizan, expanden y modifican el comportamiento que está definido en otras clases". Los métodos Start y Update, por ejemplo, son algo que Unity solo llamará durante sus [eventos predefinidos](https://docs.unity3d.com/Manual/ExecutionOrder.html) si tu clase *es* un MonoBehaviour, en la que ampliaras los métodos que necesitas con las funcionalidades adecuadas. (Por ejemplo: en el Update podrás modificar la posición de un objeto).
 
-One common mistake to begginers is thinking that everything has to be a MonoBehaviour or inherit from something else. That is very far from the true, and actually a bad practice. For example, if you have a concept or abstraction that only handles data, consider making it a class that doesn't inherit from another class.
-
+Un error común entre los que se inician, es pensar que todo debe ser un MonoBehaviour o heredar de otra clase. Esto está muy lejos de la realidad, y se trata de una mala prácticas. Por ejemplo, si tienes un código que solo manipula datos, podrías considerarlo como una clase que no herede de MonoBehaviour.
 ## Identation
 
 At first glance, identation is a simple topic: managing *spaces* inside your code. It is what makes your code more readable by separating different words or symbols with a space, tab, or new line. Understanding the importance of a code with the correct identation is often hard to developers who are new to programming, and the best way I ever found to change that was to show a piece of code with really bad identations. Let's take our script template to a new level (of uglyness):
