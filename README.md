@@ -395,6 +395,12 @@ namespace Company.Product.Feature
 	}
 }
 ```
+Tras declarar que otros namespaces se usan en este fichero, vamos a crear un namespace y encapsular todo el código dentro de este ámbto del namespace. El nombre debería empezar con el nombre de la organización/empresa y después el del producto (por ejemplo: Github.EjemploProducto). Todos los nombres irán en Pascal Case, con puntos separando 
+
+
+.
+.
+.
 
 After declaring what other namespaces this file is using, we create a namespace and encapsulate all other code inside the scope of this namespace. The naming for it should start with the organization name and then the name of the product (for example: Github.ExampleProduct). All names are in Pascal Case, with dots separating the nested hierarchy. You may or may not continue with the nesting, using now the name of a specific feature of your product (for example: Github.ExampleProduct.Database). All names should be in singular, but consider using plural when it makes the name of the namespace better explain what it contains (like Collections, of System.Collections). Finally, don't use prefixes or other symbols, like underscores.
 
