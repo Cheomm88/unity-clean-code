@@ -395,24 +395,16 @@ namespace Company.Product.Feature
 	}
 }
 ```
-Tras declarar que otros namespaces se usan en este fichero, vamos a crear un namespace y encapsular todo el código dentro de este ámbto del namespace. El nombre debería empezar con el nombre de la organización/empresa y después el del producto (por ejemplo: Github.EjemploProducto). Todos los nombres irán en Pascal Case, con puntos separando 
-
-
-.
-.
-.
-
-After declaring what other namespaces this file is using, we create a namespace and encapsulate all other code inside the scope of this namespace. The naming for it should start with the organization name and then the name of the product (for example: Github.ExampleProduct). All names are in Pascal Case, with dots separating the nested hierarchy. You may or may not continue with the nesting, using now the name of a specific feature of your product (for example: Github.ExampleProduct.Database). All names should be in singular, but consider using plural when it makes the name of the namespace better explain what it contains (like Collections, of System.Collections). Finally, don't use prefixes or other symbols, like underscores.
+Tras declarar que otros namespaces se usan en este fichero, vamos a crear un namespace y encapsular todo el código dentro de este ámbto del namespace. El nombre debería empezar con el nombre de la organización/empresa y después el del producto (por ejemplo: Github.EjemploProducto). Todos los nombres irán en Pascal Case, con los puntos separando la jerarquía anidada. Tu podrías decidir si seguir anidando o no, utilizando el nombre de una característica específica de tu producto (por ejemplo: Github.EjemploProducto.DataBase). Todos los nombres deben estar en singular, pero considera los plurales cuando permitan explicar mejor que contienen (como por ejemplo Collections, como vemos en System.Collections). Por último no utilices prefijos u otros símbolos como guiones.
 
 ## Comments
 
-With the honorable objective of helping humans understand the code, comments are an incredible way of documentating your scripts and improving maintainability. They are easy to use, but also easy to use in excess. To increase the quality of your code, here are the simple guidelines to when you should create a comment:
+Con el honorable objetivo de ayudar a los humanos a entender el código, los comentarios son una increíble forma de documtar tus scripts y mejorar el mantenimiento de los mismos. Son fáciles de usar, pero también fáciles de usar en exceso. Para incrementar la calidad de tu código, aquí van unas pequeñas reglas que deberías aplicar a la hora de crear tus comentarios:
+1) Úsalos para documtar una clase, función, enum o strcut.
+2) En la cabcera de tu fichero (principalmnete para información de copyright)
+3) Para explicar una línea que es complicada o difícil de entender.
 
-1) To document a class, method, enum, or struct.
-2) To serve as a header of the file (mainly for a copyright notice).
-3) To explain a statement that is inherently complex or not obvious to understand.
-
-Let's explore each of these three situations, starting with first one. If you type */* (dash symbol) three times on the line above of one of the structures mentioned above, a special comment section will show up.
+Vamos a revisar estas tres situaciones, empezando por la primera. Si escribes  */* (la barra) tres veces encima de una línea que contenga una de las escructuras nombradas en el primer paratado, un comentario especial surgirá.
 
 ```csharp
 /// <summary>
@@ -424,7 +416,7 @@ public class Example
 }
 ```
 
-This is not a convention to just make your comments pretty or easier to read. This is actually a standard to help automated tools (like your best friend IntelliSense) to parse your comments and generate useful content. Because of this, be sure to use this pattern to document your code.
+Esto no es una conveción para hacer tus comentarios más bonitos o fáciles de leer. Es un standar para ayudar a las herramientas automatizadas (como IntelliSense) a parsear tus comentarios y generar contenido útil. Por este motivo, asegurate de documentar el código utilizando este método.
 
 ```csharp
 // Do
@@ -447,7 +439,7 @@ private float CalculateCircleArea(float radius)
 }
 ```
 
-For the second situation there are not many standards, you are free to type in almost any way you need, as long as it starts in the very first line of the document. Here's an example:
+Para el segundo caso, no hay muchos standards, siéntete libre de hacerlo de la mejor manera que consideres siempre y cuando empiece en la primera línea del documento. Por ejemplo:
 
 ```csharp
 // --------------------------------------------------------------------------------------------------------------------
@@ -478,7 +470,7 @@ For the second situation there are not many standards, you are free to type in a
 // Rest of the code goes here
 ```
 
-The last situation is where inexperienced programmers "abuse" comments, putting them on a huge number of statements. This is unnecessary, and it actually does more harm than good! Creating comments should be for special occasions, and not the norm. It is hard to say exactly when you should use them, so follow the example below (where the comments are completely useless) so you don't make the same mistakes.
+La última situación es donde los programadores con poca experiencia "abusan" de comentarios, utilizandolos demasiado. Esto es nnecesario, y actualmente hace más daño que bien. Crear comentarios debería ser para ocasiones especiales, y no la norma. Esto es difícil de decir cuándo puedes usarlos, veamos el siguiente ejemplo (donde los comentarios son totalmente innecesarios) así que no repitas esto!
 
 ```csharp
 // Do NOT! Once again, this is an example of what you should NOT do!
