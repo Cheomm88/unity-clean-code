@@ -399,7 +399,7 @@ Tras declarar que otros namespaces se usan en este fichero, vamos a crear un nam
 
 ## Comments
 
-Con el honorable objetivo de ayudar a los humanos a entender el código, los comentarios son una increíble forma de documtar tus scripts y mejorar el mantenimiento de los mismos. Son fáciles de usar, pero también fáciles de usar en exceso. Para incrementar la calidad de tu código, aquí van unas pequeñas reglas que deberías aplicar a la hora de crear tus comentarios:
+Con el honorable objetivo de ayudar a los humanos a entender el código, los comentarios son una increíble forma de documentar tus scripts y mejorar el mantenimiento de los mismos. Son fáciles de usar, pero también fáciles de usar en exceso. Para incrementar la calidad de tu código, aquí van unas pequeñas reglas que deberías aplicar a la hora de crear tus comentarios:
 1) Úsalos para documtar una clase, función, enum o strcut.
 2) En la cabcera de tu fichero (principalmnete para información de copyright)
 3) Para explicar una línea que es complicada o difícil de entender.
