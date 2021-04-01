@@ -199,7 +199,7 @@ private bool _isEnemy;
 
 ## Methods
 
-Si lo piensas, los métodos/funciones son el núcleo de un programa: ellos **hacen** algo. Por su naturaleza, cuando creas un método/función deberías utilizar un nombre con un verbo. No olvides lo aprendido con los nombres de las variables variables: debe ser descriptivo, con signiificado y fácil de leer. Así como utilizar la nomenclatura "Pascal Case" (Cada palabra con la primera letra en mayúscula)
+Si lo piensas, los métodos/funciones son el núcleo de un programa: ellos **hacen** algo. Por su naturaleza, cuando creas un método/función deberías utilizar un nombre con un verbo. No olvides lo aprendido con los nombres de las variables variables: debe ser descriptivo, con significado y fácil de leer. Así como utilizar la nomenclatura "Pascal Case" (Cada palabra con la primera letra en mayúscula)
 
 ```csharp
 // Do
